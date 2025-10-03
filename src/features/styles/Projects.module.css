@@ -1,0 +1,28 @@
+.projectList {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.projectItem {
+  margin-bottom: 25px;
+}
+
+.projectTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: teal;
+  text-decoration: none;
+}
+
+.projectTitle:hover {
+  text-decoration: underline;
+}
+
+.detailRow {
+  font-size: 15px;
+  margin: 4px 0;
+}
+
+.detailRow strong {
+  font-weight: 600;
+}
