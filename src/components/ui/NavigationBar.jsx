@@ -50,7 +50,7 @@ const NavigationBar = () => {
                                 <Nav.Link onClick={handleClose} as={Link} to="/">Home</Nav.Link>
                                 {/* <Nav.Link onClick={handleClose} href="#about">About</Nav.Link> */}
                                 <Nav.Link onClick={handleClose} as={Link} to="/publications#publications">Publication</Nav.Link>
-                                <Nav.Link onClick={handleClose} as={Link} to="/education">Education</Nav.Link>
+                                <Nav.Link onClick={handleClose} as={Link} to="/education#education">Education</Nav.Link>
                                 <Nav.Link onClick={handleClose} as={Link} to="/projects#projects">Projects</Nav.Link>
                                 {/* {user ? (
                                     <Nav.Link onClick={handleClose} as={Link} to="/dashboard/profile">{user.user_metadata.full_name || "User"}</Nav.Link>

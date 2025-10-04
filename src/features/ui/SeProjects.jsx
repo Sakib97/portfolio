@@ -66,10 +66,28 @@ const SeProjects = () => {
                                             rel="noopener noreferrer"
                                             className={styles.linkButton}
                                         >
-                                             GitHub
+                                            {proj.github_link_backend ? "GitHub (Frontend)" 
+                                            : "GitHub"}
+                                             
                                         </a>
                                     </ div>
 
+                                )}
+
+                                {proj.github_link_backend && (
+                                    < div style={{ display: "flex", flexDirection: "row" }}>
+                                        <div style={{ transform: "translateY(1px)" }}>
+                                            <i className="fi fi-brands-github"></i>&nbsp;
+                                        </div>
+                                        <a
+                                            href={proj.github_link_backend}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.linkButton}
+                                        >
+                                             GitHub (Backend)
+                                        </a>
+                                    </ div>
                                 )}
                             </div>
                         </li>
