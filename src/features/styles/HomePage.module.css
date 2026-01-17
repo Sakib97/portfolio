@@ -10,6 +10,18 @@ body {
     color: #3f59b7 !important;
 
 }
+/* profile card style */
+
+.profileCardContainer {
+    align-self: flex-start;
+}
+
+@media (min-width: 992px) {
+    .profileCardContainer {
+        position: sticky;
+        top: 20px;
+    }
+}
 
 .profileImage {
     border-radius: 50%;
