@@ -93,7 +93,7 @@ const ProfileCard = () => {
                 <i className="fi fi-ss-user-graduate"></i>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="https://www.researchgate.net/profile/Ashek-Seum"
                 target="_blank"
@@ -113,7 +113,6 @@ const ProfileCard = () => {
                     height="448"
                     rx="40"
                     fill="#3830a900"
-                    // fill="#eae9ef00"
                   />
                   <path
                     fill="#ffffff"
@@ -121,7 +120,7 @@ const ProfileCard = () => {
                   />
                 </svg>
               </a>
-            </li>
+            </li> */}
             <li>
               <a
                 href="https://www.linkedin.com/in/ashek-seum-sakib-899a14113/"
