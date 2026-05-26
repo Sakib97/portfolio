@@ -1,10 +1,9 @@
 import ProfileCard from "./ProfileCard.jsx";
 import usePublications from "../../hooks/usePublications";
-import Spinner from 'react-bootstrap/Spinner';
 import { boldSpecificName } from "../../util/stringUtil";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import PublicationsSkeleton from "../../components/skeletons/PublicationsSkeleton";
 
 const PublicationsPage = () => {
     function groupByYear(publications) {
@@ -91,13 +90,11 @@ const PublicationsPage = () => {
                         <br />
                         <br />
 
-                        {loading &&
+                        {loading && (
                             <div className="mb-5 wow fadeIn">
-                                <Spinner animation="border" role="status">
-                                    <span className="visually-hidden">Loading...</span>
-                                </Spinner>
+                                <PublicationsSkeleton />
                             </div>
-                        }
+                        )}
 
                         {!loading &&
                             <div className="mb-5 wow fadeIn">

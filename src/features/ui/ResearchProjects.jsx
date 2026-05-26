@@ -1,6 +1,7 @@
 import { useResearchProjects } from "../../hooks/useProjects";
 import Spinner from 'react-bootstrap/Spinner';
 import styles from "../styles/Projects.module.css";
+import ResProjectsSkeleton from "../../components/skeletons/ResProjectSkeleton";
 
 const ResearchProjects = () => {
     const { researchProjects: projects, loading } = useResearchProjects();
@@ -11,9 +12,7 @@ const ResearchProjects = () => {
             <hr />
 
             {loading ? (
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
+                <ResProjectsSkeleton />
             ) : (
                 <ul className={styles.projectList}>
                     {projects?.map((proj) => (
