@@ -1,5 +1,6 @@
 .wrapper {
-  --accent: #e5432b;
+  /* --accent: #e5432b; */
+  --accent: #0e686b;
   --ink: #1d1d1f;
   --muted: #6b6b6b;
   --rule: #cfcfcf;
@@ -30,7 +31,7 @@
   color: var(--ink);
   background: #fff;
   border: 1px solid var(--rule);
-  border-radius: 0;
+  border-radius: 20px;
   cursor: pointer;
   transition: border-color 0.15s ease, background-color 0.15s ease;
 }
@@ -50,6 +51,7 @@
   font-size: 12px;
   font-weight: 600;
   opacity: 0.7;
+  
 }
 
 .search {
@@ -59,7 +61,7 @@
   font-size: 14px;
   background: #f1f1f1;
   border: 1px solid var(--rule);
-  border-radius: 0;
+  border-radius: 20px;
   outline: none;
 }
 
@@ -100,6 +102,7 @@
   font-size: 11px;
   color: var(--accent);
   border: 1px solid var(--accent);
+  border-radius: 20px;
 }
 
 .title {
