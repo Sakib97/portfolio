@@ -10,11 +10,11 @@ export default function usePublications() {
     const fetchData = async () => {
       let { data, error } = await supabase
         .from("publications")
-        .select("*")
+        .select("id, title, link, authors, publisher, publisher_link, year, comments, bibtex, publication_type")
         .order("year", { ascending: false }) // latest year first
         .order("created_at", { ascending: false }); // latest paper first inside year
       if (error) console.error(error);
-      else setPublications(data);
+      else setPublications(data ?? []);
       setLoading(false);
     };
     fetchData();
