@@ -1,22 +1,12 @@
 import ProfileCard from "./ProfileCard.jsx";
 import usePublications from "../../hooks/usePublications";
-import { boldSpecificName } from "../../util/stringUtil";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PublicationsSkeleton from "../../components/skeletons/PublicationsSkeleton";
+import PublicationList from "../ui/PublicationList.jsx";
 
 const PublicationsPage = () => {
-    function groupByYear(publications) {
-        return publications.reduce((acc, pub) => {
-            if (!acc[pub.year]) acc[pub.year] = [];
-            acc[pub.year].push(pub);
-            return acc;
-        }, {});
-    }
     const { publications, loading } = usePublications();
-
-    const grouped = groupByYear(publications);
-    const years = Object.keys(grouped).sort((a, b) => b - a); // newest first
 
     // for auto scroll to publications section
     const location = useLocation();
@@ -96,52 +86,11 @@ const PublicationsPage = () => {
                             </div>
                         )}
 
-                        {!loading &&
+                        {!loading && (
                             <div className="mb-5 wow fadeIn">
-                                {years.map((year) => (
-                                    <div key={year}>
-                                        <h3>{year}</h3>
-                                        <hr />
-                                        <ul>
-                                            {grouped[year].map((pub) => (
-                                                <h5 key={pub.id}>
-                                                    <li>
-                                                        <a href={pub.link} target="_blank" rel="noopener noreferrer">
-                                                            <span style={{ color: "teal" }}>
-                                                                <u>{pub.title}</u>
-                                                            </span>
-                                                        </a>
-                                                        <br />
-                                                        <br />
-                                                        <h6>
-                                                            <i className="fi fi-sr-users"></i> &nbsp;
-                                                            {boldSpecificName(pub.authors, "Ashek Seum")}
-                                                            <br />
-                                                            {pub.comments &&
-                                                                <span style={{ color: 'grey', fontSize: '12px', fontWeight: 'bold' }}>
-                                                                    †{pub.comments}
-                                                                </span>}
-                                                        </h6>
-                                                        <h6 style={{ marginTop: '12px' }}>
-                                                            <i className="fi fi-sr-newspaper"></i> &nbsp;{" "}
-                                                            {pub.publisher_link ? (
-                                                                <a href={pub.publisher_link} target="_blank" rel="noopener noreferrer">
-                                                                    {pub.publisher}
-                                                                </a>
-                                                            ) : (
-                                                                pub.publisher
-                                                            )}
-                                                        </h6>
-                                                    </li>
-                                                    <br />
-                                                </h5>
-                                            ))}
-                                        </ul>
-                                        <br />
-                                    </div>
-                                ))}
+                                <PublicationList publications={publications} />
                             </div>
-                        }
+                        )}
                     </div>
                 </div>
             </div>
