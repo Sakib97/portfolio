@@ -198,6 +198,7 @@
   font-weight: 700;
   background: #fff;
   border: 1px solid var(--rule);
+  border-radius: 20px;
   cursor: pointer;
 }
 
